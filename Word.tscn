@@ -1,0 +1,421 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Barra.gd" type="Script" id=2]
+[ext_resource path="res://Player/run3.png" type="Texture" id=3]
+[ext_resource path="res://Player/run2.png" type="Texture" id=4]
+[ext_resource path="res://Player/idle2.png" type="Texture" id=5]
+[ext_resource path="res://Player/run8.png" type="Texture" id=6]
+[ext_resource path="res://Player/run7.png" type="Texture" id=7]
+[ext_resource path="res://Player/run6.png" type="Texture" id=8]
+[ext_resource path="res://Player/run5.png" type="Texture" id=9]
+[ext_resource path="res://Player/run4.png" type="Texture" id=10]
+[ext_resource path="res://Player/idle3.png" type="Texture" id=11]
+[ext_resource path="res://Player/jump.png" type="Texture" id=12]
+[ext_resource path="res://Player/fall.png" type="Texture" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Run",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 14.6082, 22.0483 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32, 32 )
+
+[node name="Word" type="Node"]
+
+[node name="Barra" type="KinematicBody2D" parent="."]
+position = Vector2( 509.435, 264.851 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Barra"]
+frames = SubResource( 1 )
+animation = "Fall"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barra"]
+position = Vector2( -1.48959, 0.254379 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Barra"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+smoothing_enabled = true
+
+[node name="Terra" type="Node" parent="."]
+
+[node name="Chao" type="StaticBody2D" parent="Terra"]
+position = Vector2( 512, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao"]
+shape = SubResource( 3 )
+
+[node name="Chao2" type="StaticBody2D" parent="Terra"]
+position = Vector2( 576, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao2"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao2"]
+shape = SubResource( 3 )
+
+[node name="Chao3" type="StaticBody2D" parent="Terra"]
+position = Vector2( 640, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao3"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao3"]
+shape = SubResource( 3 )
+
+[node name="Chao4" type="StaticBody2D" parent="Terra"]
+position = Vector2( 704, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao4"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao4"]
+shape = SubResource( 3 )
+
+[node name="Chao5" type="StaticBody2D" parent="Terra"]
+position = Vector2( 768, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao5"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao5"]
+shape = SubResource( 3 )
+
+[node name="Chao6" type="StaticBody2D" parent="Terra"]
+position = Vector2( 832, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao6"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao6"]
+shape = SubResource( 3 )
+
+[node name="Chao7" type="StaticBody2D" parent="Terra"]
+position = Vector2( 448, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao7"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao7"]
+shape = SubResource( 3 )
+
+[node name="Chao8" type="StaticBody2D" parent="Terra"]
+position = Vector2( 384, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao8"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao8"]
+shape = SubResource( 3 )
+
+[node name="Chao9" type="StaticBody2D" parent="Terra"]
+position = Vector2( 320, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao9"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao9"]
+shape = SubResource( 3 )
+
+[node name="Chao10" type="StaticBody2D" parent="Terra"]
+position = Vector2( 256, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao10"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao10"]
+shape = SubResource( 3 )
+
+[node name="Chao11" type="StaticBody2D" parent="Terra"]
+position = Vector2( 896, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao11"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao11"]
+shape = SubResource( 3 )
+
+[node name="Chao12" type="StaticBody2D" parent="Terra"]
+position = Vector2( 896, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao12"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao12"]
+shape = SubResource( 3 )
+
+[node name="Chao13" type="StaticBody2D" parent="Terra"]
+position = Vector2( 896, 192 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao13"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao13"]
+shape = SubResource( 3 )
+
+[node name="Chao24" type="StaticBody2D" parent="Terra"]
+position = Vector2( 960, 192 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao24"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao24"]
+shape = SubResource( 3 )
+
+[node name="Chao25" type="StaticBody2D" parent="Terra"]
+position = Vector2( 1024, 192 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao25"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao25"]
+shape = SubResource( 3 )
+
+[node name="Chao26" type="StaticBody2D" parent="Terra"]
+position = Vector2( 1088, 192 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao26"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao26"]
+shape = SubResource( 3 )
+
+[node name="Chao27" type="StaticBody2D" parent="Terra"]
+position = Vector2( 1152, 192 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao27"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao27"]
+shape = SubResource( 3 )
+
+[node name="Chao14" type="StaticBody2D" parent="Terra"]
+position = Vector2( 192, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao14"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao14"]
+shape = SubResource( 3 )
+
+[node name="Chao15" type="StaticBody2D" parent="Terra"]
+position = Vector2( 128, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao15"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao15"]
+shape = SubResource( 3 )
+
+[node name="Chao16" type="StaticBody2D" parent="Terra"]
+position = Vector2( 64, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao16"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao16"]
+shape = SubResource( 3 )
+
+[node name="Chao17" type="StaticBody2D" parent="Terra"]
+position = Vector2( 0, 320 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao17"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao17"]
+shape = SubResource( 3 )
+
+[node name="Chao18" type="StaticBody2D" parent="Terra"]
+position = Vector2( -32, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao18"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao18"]
+shape = SubResource( 3 )
+
+[node name="Chao19" type="StaticBody2D" parent="Terra"]
+position = Vector2( -32, 192 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao19"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao19"]
+shape = SubResource( 3 )
+
+[node name="Chao20" type="StaticBody2D" parent="Terra"]
+position = Vector2( -32, 128 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao20"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao20"]
+shape = SubResource( 3 )
+
+[node name="Chao21" type="StaticBody2D" parent="Terra"]
+position = Vector2( -32, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao21"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao21"]
+shape = SubResource( 3 )
+
+[node name="Chao22" type="StaticBody2D" parent="Terra"]
+position = Vector2( -32, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao22"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao22"]
+shape = SubResource( 3 )
+
+[node name="Chao23" type="StaticBody2D" parent="Terra"]
+position = Vector2( -32, -64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Terra/Chao23"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terra/Chao23"]
+shape = SubResource( 3 )
